@@ -1,180 +1,182 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    background: #15161D;
-    gap: 20px;
-  }
-  
-  
-  #title-page {
-    font-size: 40px;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-  
-  }
-  
-  #title-page-span {
-    font-size: 45px;
-    color: #F93674;
-    font-weight: 700;
-    text-align: center;
-    filter: drop-shadow(0px 0px 2px #F93674);
-  }
-  
-  
-  
-  #title-form {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 30px;
-    color: #fff;
-  }
-  
-  .container {
-    position: relative;
-    max-width: 900px;
-    width: 100%;
-    background: #17181F;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 40px 0px #00000085;
-  
-  }
-  .container-task {
-    position: relative;
-    max-width: 900px;
-    width: 100%;
-    background: #17181F;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 40px 0px #00000085;
-    gap: 25px;
-    display: grid;
-    min-height: 90px;
-  }
-  
-  
-  input.invalid {
-    border-color: #F93674;
-  }
-  
-  .error-message {
-    color: #F93674;
-    font-size: 0.8rem;
-    margin-top: 0.3rem;
-    padding-left: 5px;
-  }
-  
-  .column {
-    display: flex;
-  
-  }
-  
-  form {
-    margin-top: 20px;
-    display: inline;
-  }
-  
-  .form-content {
-    height: 50px;
-    outline: none;
-    font-size: 16px;
-    color: #d3d3d3;
-    font-weight: 300;
-  
-    margin-top: 8px;
-    border: none;
-    border-radius: 10px;
-    background: #20212C;
-  
-  }
-  
-  .form-content+.form-content {
-    margin-left: 15px;
-  }
-  
-  #title {
-    width: 50%;
-    padding: 10px 15px;
-  
-  }
-  
-  #priority {
-    width: 25%;
-    padding: 10px 15px;
-  
-  }
-  
-  #priority:focus {
-    color: #fff;
-  }
-  
-  #duedate {
-    width: 25%;
-    padding: 10px 15px;
-  }
-  
-  #description {
-    margin-top: 15px;
-    width: 100%;
-    padding: 10px 15px;
-    resize: none;
-    height: auto;
-  
-  }
-  
-  :focus {
-    border: 1px solid #4b4b4b;
-  }
-  
-  ::placeholder {
-    color: #d3d3d3;
-    font-weight: 300;
-  }
-  
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-  }
-  
-  #add-button,
-  #save-button {
-    border: 2px solid #292A35;
-    border-radius: 10px;
-    background: none;
-    color: white;
-    cursor: pointer;
-    margin-top: 8px;
-    padding: 10px 20px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: 400;
-    transition: all 0.3s ease;
-  }
-  
-  #add-button:hover,
-  #save-button:hover {
-    background-color: #F93674;
-    border: 2px solid #F93674;
-  }
-  
-  p {
-    font-size: 16px;
-    font-weight: 300;
-    color: rgb(255, 255, 255);
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background: #15161D;
+  gap: 20px;
+}
+
+
+#title-page {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+
+}
+
+#title-page-span {
+  font-size: 45px;
+  color: #F93674;
+  font-weight: 700;
+  text-align: center;
+  filter: drop-shadow(0px 0px 2px #F93674);
+}
+
+#logo {
+  width: 40px;
+  margin-right: 5px;
+}
+
+#title-form {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  background: #17181F;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 40px 0px #00000085;
+
+}
+.container-task {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  background: #17181F;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 40px 0px #00000085;
+  gap: 25px;
+  display: grid;
+  min-height: 90px;
+}
+
+
+input.invalid {
+  border-color: #F93674;
+}
+
+.error-message {
+  color: #F93674;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  padding-left: 5px;
+}
+
+.column {
+  display: flex;
+
+}
+
+form {
+  margin-top: 20px;
+  display: inline;
+}
+
+.form-content {
+  height: 50px;
+  outline: none;
+  font-size: 16px;
+  color: #d3d3d3;
+  font-weight: 300;
+
+  margin-top: 8px;
+  border: none;
+  border-radius: 10px;
+  background: #20212C;
+
+}
+
+.form-content+.form-content {
+  margin-left: 15px;
+}
+
+#title {
+  width: 50%;
+  padding: 10px 15px;
+
+}
+
+#priority {
+  width: 25%;
+  padding: 10px 15px;
+
+}
+
+#priority:focus {
+  color: #fff;
+}
+
+#duedate {
+  width: 25%;
+  padding: 10px 15px;
+}
+
+#description {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px 15px;
+  resize: none;
+  height: auto;
+
+}
+
+:focus {
+  border: 1px solid #4b4b4b;
+}
+
+::placeholder {
+  color: #d3d3d3;
+  font-weight: 300;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+#add-button,
+#save-button {
+  border: 2px solid #292A35;
+  border-radius: 10px;
+  background: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 8px;
+  padding: 10px 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+#add-button:hover,
+#save-button:hover {
+  background-color: #F93674;
+  border: 2px solid #F93674;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+}

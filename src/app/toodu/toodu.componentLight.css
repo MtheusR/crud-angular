@@ -1,141 +1,139 @@
 /* The switch - the box around the slider */
 .switch {
-    font-size: 13px;
-    display: inline-block;
-    width: 3.5em;
-    height: 2em;
-    position: fixed;
-    top: 20px;
-    left: 20px;
+  font-size: 13px;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: #F93674;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: .5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  margin-left: 1px;
+  left: 2%;
+  bottom: 12%;
+  box-shadow: inset 8px -4px 0px 0px #ffffff;
+  background: var(--background);
+  transition: .5s;
+}
+
+input:checked+.slider {
+  background-color: #15161D;
+}
+
+input:checked+.slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #ffffff;
+}
+
+body.light-mode {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.light-mode #title-page,
+.light-mode #title-form,
+.light-mode #priority:focus {
+  color: #333;
+}
+
+.light-mode .container {
+  background-color: #F4F4F4;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .form-content {
+  background-color: #F4F4F4;
+  border: 1px solid #D8D8D8;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.light-mode #add-button, #save-button {
+  background-color: #333;
+}
+
+.light-mode #add-button:hover,
+.light-mode #save-button:hover {
+  background-color: #F93674;
+  border: 2px solid #F93674;
+}
+
+.light-mode ::placeholder {
+  color: #414141;
+  font-weight: 300;
+
+}
+
+.light-mode input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0);
+}
+
+.light-mode .container-task {
+  background: #F93674;
+}
+
+.light-mode .task {
+  background: #f4f4f4;
+}
+
+.light-mode .task-title {
+  color: #414141;
+}
+
+.light-mode .task-description {
+  color: #414141;
+}
+
+.light-mode .task-due-date {
+  color: #7e7e7e;
+}
+
+.light-mode input.priority-null[type="checkbox"] {
+  border-color: #b4b4b4;
+}
+.light-mode input.priority-null[type="checkbox"]:checked {
+  background: url('./../../assets/checked-null.png') no-repeat center center;
+  background-size: contain;
+  border-color: #D8D8D8;
+}
+
+.light-mode #editButton span {
+  color: #FF992B;
+}
+
+.light-mode #editButton:hover {
+  filter: drop-shadow(0px 0px 9px #fa9332);
+}
+
+.light-mode .container-task {
+    box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.15);
+
   }
   
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    --background: #F93674;
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--background);
-    transition: .5s;
-    border-radius: 30px;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 1.4em;
-    width: 1.4em;
-    border-radius: 50%;
-    margin-left: 1px;
-    left: 2%;
-    bottom: 12%;
-    box-shadow: inset 8px -4px 0px 0px #ffffff;
-    background: var(--background);
-    transition: .5s;
-  }
-  
-  input:checked+.slider {
-    background-color: #15161D;
-  }
-  
-  input:checked+.slider:before {
-    transform: translateX(100%);
-    box-shadow: inset 15px -4px 0px 15px #ffffff;
-  }
-  
-  body.light-mode {
-    background-color: #f2f2f2;
-    color: #333;
-  }
-  
-  .light-mode #title-page,
-  .light-mode #title-form,
-  .light-mode #priority:focus {
-    color: #333;
-  }
-  
-  .light-mode .container {
-    background-color: #F4F4F4;
-    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
-  }
-  
-  .light-mode .form-content {
-    background-color: #F4F4F4;
-    border: 1px solid #D8D8D8;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
-    color: #333;
-  }
-  
-  .light-mode #add-button, #save-button {
-    background-color: #333;
-  }
-  
-  .light-mode #add-button:hover,
-  .light-mode #save-button:hover {
-    background-color: #F93674;
-    border: 2px solid #F93674;
-  }
-  
-  .light-mode ::placeholder {
-    color: #414141;
-    font-weight: 300;
-  
-  }
-  
-  .light-mode input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(0);
-  }
-  
-  .light-mode .container-task {
-    background: #F93674;
-  }
-  
-  .light-mode .task {
-    background: #f4f4f4;
-  }
-  
-  .light-mode .task-title {
-    color: #414141;
-  }
-  
-  .light-mode .task-description {
-    color: #414141;
-  }
-  
-  .light-mode .task-due-date {
-    color: #7e7e7e;
-  }
-  
-  .light-mode input.priority-null[type="checkbox"] {
-    border-color: #b4b4b4;
-  }
-  
-  input.priority-null[type="checkbox"]:checked {
-    background-color: #b4b4b4;
-  }
-  
-  .light-mode #editButton span {
-    color: #fa9332;
-  }
-  .light-mode #editButton img {
-      filter: hue-rotate(320deg);
-  }
-  
-  .light-mode #editButton:hover {
-    filter: drop-shadow(0px 0px 9px #fa9332);
-  }
-  
-  .light-mode .container-task {
-      box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.15);
-  
-    }
-    

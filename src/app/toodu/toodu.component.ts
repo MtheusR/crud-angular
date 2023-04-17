@@ -13,9 +13,9 @@ export class TooduComponent implements OnInit {
   titleError = false;
   taskForm: FormGroup = this.fb.group({
     title: ['', Validators.required],
-    description: ['', Validators.required],
-    priority: [null, Validators.required],
-    dueDate: [null, Validators.required],
+    description: [''],
+    priority: [null],
+    dueDate: [null],
     completed: [false],
   });
 
@@ -39,10 +39,16 @@ export class TooduComponent implements OnInit {
       this.isDarkMode = true;
     }
   }
-
+  
+  fetchTasks(): void {
+    this.taskService.getAllTasks().subscribe((tasks) => {
+      this.tasks = tasks;
+    });
+  }
+  
   toggleMode() {
     const switchEl = document.querySelector('.switch input') as HTMLInputElement;;
-
+    
     if (switchEl.checked) {
       this.isDarkMode = false;
       localStorage.setItem("checked", "true");
@@ -54,13 +60,7 @@ export class TooduComponent implements OnInit {
       localStorage.setItem("isDarkMode", this.isDarkMode.toString());
     }
   }
-
-  fetchTasks(): void {
-    this.taskService.getAllTasks().subscribe((tasks) => {
-      this.tasks = tasks;
-    });
-  }
-
+  
   onSubmit() {
     if (!this.taskForm.value.title) {
       this.titleError = true;
@@ -71,7 +71,7 @@ export class TooduComponent implements OnInit {
     this.taskService.addTask(newTask).subscribe((newTask) => {
       console.log('Task added successfully:', newTask);
       this.taskForm.reset();
-      this.fetchTasks();//TESTAR
+      this.fetchTasks();
       this.titleError = false;
     });
   }

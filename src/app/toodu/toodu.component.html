@@ -4,9 +4,13 @@
   <label class="switch">
     <input type="checkbox" (change)=toggleMode()>
     <span class="slider"></span>
-</label>
+  </label>
   <!-- HEADER -->
-  <h1 id="title-page">Too<span id="title-page-span">Du</span></h1>
+
+  <h1 id="title-page" style="display: flex; align-items: center;">
+    <img id="logo" src="./../../assets/checked.png" alt="Toodu">
+    Too<span id="title-page-span">Du</span>
+  </h1>
 
   <!-- FORM -->
   <div class="container">
@@ -57,12 +61,18 @@
       <div class="row-header">
 
         <!-- CHECKBOX -->
-        <input type="checkbox" class="checkmark" [checked]="task.completed" (change)="toggleCompleted(task)" [ngClass]="{
+        <label class="custom-checkbox">
+          <input type="checkbox" id="my-checkbox" class="checkmark" [checked]="task.completed"
+            (change)="toggleCompleted(task)" [ngClass]="{
             'priority-null': task.priority === null,
             'priority-Alta': task.priority === 'Alta',
             'priority-Media': task.priority === 'Media',
             'priority-Baixa': task.priority === 'Baixa'
           }" />
+
+        </label>
+
+
 
         <!-- TITULO -->
         <h2 class="task-title">{{ task.title }}</h2>
@@ -74,12 +84,13 @@
 
       <!-- DESCRICAO -->
       <p class="task-description">{{ task.description }}</p>
-      
+
       <div class="row-buttons">
         <!-- BOTAO EDITAR -->
         <button class="option-button" id="editButton" (click)="selectTask(task)">
-          
-          <img src="./../../assets/icon-edit.png" />
+
+          <img *ngIf="isDarkMode" src="./../../assets/icon-edit-dark.png" />
+          <img *ngIf="!isDarkMode" src="./../../assets/icon-edit.png" />
           <span>Editar</span>
         </button>
 

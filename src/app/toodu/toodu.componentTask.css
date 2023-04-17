@@ -20,6 +20,7 @@ ul {
   align-items: center;
   margin-bottom: 10px;
 }
+
 .row-buttons {
   display: flex;
   column-gap: 15px;
@@ -38,7 +39,7 @@ input[type="checkbox"] {
   outline: none;
   cursor: pointer;
   transition: all 0.3s;
-  
+
 }
 
 /* estilo para o título do item */
@@ -60,52 +61,70 @@ input[type="checkbox"] {
   margin-bottom: 5px;
   width: 100%;
   word-wrap: break-word;
-  
+
 }
 
-.priority-Alta, .priority-Media, .priority-Baixa {
-  padding: 2px 3px;
-  border-radius: 3px;
-}
-
+.priority-Alta,
+.priority-Media,
+.priority-Baixa,
 .priority-null {
   padding: 2px 3px;
   border-radius: 3px;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+
 }
 
-input.priority-Alta[type="checkbox"] {
-  border-color: #e15e36;
+input.priority-null[type="checkbox"] {
+  border-color: #fff;
+}
+
+input.priority-Baixa[type="checkbox"] {
+  border-color: #33b5ca;
 }
 
 input.priority-Media[type="checkbox"] {
   border-color: #e9e236;
 }
 
-input.priority-Baixa[type="checkbox"] {
-  border-color: #33b5ca;
-}
-input.priority-null[type="checkbox"] {
-  border-color: #fff;
+input.priority-Alta[type="checkbox"] {
+  border-color: #e15e36;
 }
 
-input.priority-Alta[type="checkbox"]:checked {
-    background-color: #e15e36;
+input[type="checkbox"]:checked {
+  width: 25px;
+  height: 25px;
+  border-color: transparent;
+  background-size: contain;
+  transition: all 0.2s ease; /* adicionando animação de transição */
 }
 
 input.priority-null[type="checkbox"]:checked {
-    background-color: #fff;
-}
-  
-  input.priority-Media[type="checkbox"]:checked {
-    background-color: #e9e236;
-}
-  
-  input.priority-Baixa[type="checkbox"]:checked {
-    background-color: #33b5ca;
+  background: url('./../../assets/checked-null.png') no-repeat center center;
+  background-size: contain;
+
 }
 
+input.priority-Baixa[type="checkbox"]:checked {
+  background: url('./../../assets/checked-baixo.png') no-repeat center center;
+  background-size: contain;
 
-/* estilo para o botão de exclusão do item */
+}
+
+input.priority-Media[type="checkbox"]:checked {
+  background: url('./../../assets/checked-medio.png') no-repeat center center;
+  background-size: contain;
+
+}
+
+input.priority-Alta[type="checkbox"]:checked {
+  background: url('./../../assets/checked-alto.png') no-repeat center center;
+  background-size: contain;
+
+}
+
 .option-button {
   background: none;
   border: none;
@@ -136,6 +155,7 @@ span {
 #deleteButton span {
   color: #ff6868;
 }
+
 #editButton img {
   margin-right: 5px;
 }
@@ -151,5 +171,3 @@ span {
 #editButton:hover {
   filter: drop-shadow(0px 0px 9px #fff7b4);
 }
-
-

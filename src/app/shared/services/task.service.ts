@@ -11,7 +11,7 @@ import { Task } from './task.model';
 export class TaskService {
   private baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { } //Recebe uma instância de HttpClient injetada
 
   getAllTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.baseUrl);
